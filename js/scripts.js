@@ -1,11 +1,8 @@
-// back-end logic start
-
-
-// back-end logic end 
-
-//front-end logic goes in $(document).ready
 $(document).ready(function() {
-
-
-
+    // on submit instructions for intro form
+    $("form#intro").submit(function(event) {
+        event.preventDefault();
+        console.log("started")
+        $("div#intro").hide();
+    });
 });
