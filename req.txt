@@ -18,3 +18,11 @@ program name
 detailed setup instructions
 description
 copyright and license information
+
+Ruby
+C#
+JavaScript
+Go
+Python
+Rust
+Swift
