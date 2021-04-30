@@ -1,42 +1,59 @@
 $(document).ready(function() {
-    //programming language variables
-    let ruby = 0; //1
-    let csharp = 0; //2
-    let javaScript = 0; //3
-    let go = 0; //4
-    let python = 0; //5
-    let rust = 0; //6
-    let swift = 0; //7
+    //Back-end begins here 👇
 
-    //dynamically set variables and element locations
+    //Programming language variables:
+    let ruby = 0; //These variables use integers. We'll get to why in a bit.
+    let csharp = 0;
+    let javaScript = 0;
+    let go = 0;
+    let python = 0;
+    let rust = 0;
+    let swift = 0;
+
+    //An array of "q + ineger". This allows us to use the same 
     let arr = ['q1', 'q2', 'q3', 'q4', 'q5', 'q6'];
     let int = 0
 
-    // on submit instructions for intro form
-    $("form#intro").submit(function(event) {
-        event.preventDefault();
-        console.log("quiz has started.")
-            //css manipulation
-        $("form#intro").hide();
-        $("form#q1").show();
+    // Back-end ends here 👆
 
+    //Front-end starts here 👇 (kinda...)
+
+    //On intro form submit =>
+    $("form#intro").submit(function(event) {
+        event.preventDefault(); //We're not pulling from a database so we interupt the usual form process. 
+        console.log("quiz has started.") //debug
+            //CSS manipulation
+        $("form#intro").hide(); //Hide intro
+        $("form#q1").show(); //Show Question 1
     });
 
-    function myFunction() {
 
-        // question logic
+    //The function iterateLogic() uses the array from line 14 to distribute the phrases "q + integer" appropriately.
+    //This method of distributing phrases from an array throughout the function below saves us from rewriting the same form submit logic.
+
+    //Create the function:
+    function iterateLogic() {
+        //On the form submit of form "q1"-the 0th spot of the array "arr". Run the code starting on line 38.
         $("form#" + arr[int]).submit(function(event) {
             event.preventDefault();
-            //project
-            let question = $('input[name=' + '"' + arr[0] + '"' + ']:checked').val();
-            console.log(question + " has been selected"); //debug
+            //Pull the user input from whatever string "q + integer"  is using in the array "arr".
+            let question = $('input[name=' + '"' + arr[int] + '"' + ']:checked').val();
+            //If user doesn't select anything, throw error and reload page.
+            if (question == undefined) {
+                alert("Please select an option.")
+                location.reload();
+            } else {}
+            //So we know if the code did everthing right:
+            console.log(question + " has been selected from radio at: " + "form#" + arr[int]); //debug
 
+
+            //This is like an if and then statment. But just more efficient. 
             switch (question) {
-                case 'ruby':
-                    ruby++ //this implemements a point system which is what will determine which language is best for the user
-                    console.log(1 + " is added to: " + question + ", " + question + " is now at: " + ruby); //debug
+                case 'ruby': //If the case is the string 'ruby', 'chsharp', etc... it will-
+                    ruby++ //run the code beneath it... In this case it adds 1 to the variables we listed on line 5 through 11.
+                    console.log(1 + " is added to: " + question + ", " + question + " is now at: " + ruby); //More debugging code.
 
-                    break; //to stop the case to save computation power.
+                    break; //This stops the case (current process) to save computation power.
                 case 'csharp':
                     csharp++
                     console.log(1 + " is added to: " + question + ", " + question + " is now at: " + csharp); //debug
@@ -61,25 +78,21 @@ $(document).ready(function() {
                     swift++
                     console.log(1 + " is added to: " + question + ", " + question + " is now at: " + swift); //debug
                     break;
-                    // default:
-                    //     alert("Something went wrong.")
             }
-
+            //If all goes well then the user will progress.
+            //The line below adds 1 to the varbiable integer. This will then tell the code what string to pull for the array in the next pass of the code.
             int++
-            //check if nothing was pressed.
-            if (question == null) {
-                alert("Please type something");
-                //this alerts the user and cuts off progression of the quiz.
-            } else {
-                //if all goes well then the user will progress.
-                //css manipulation
-                $("form#" + arr[int - 1]).hide();
-                $("form#" + arr[int]).show();
-            }
-            myFunction()
+            //CSS manipulation
+            $("form#" + arr[int - 1]).hide();
+            $("form#" + arr[int]).show();
+            //I guess here 👆 is where the front-end stops.
+
+            //Parse another pass of the function with the values re-determined.
+            iterateLogic()
 
         });
 
     }
-    myFunction();
+    //The code knows when to stop because the final array is "q6" which pulls the "Final Results" form from the HTML.
+    iterateLogic();
 });
