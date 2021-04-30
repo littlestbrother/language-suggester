@@ -7,7 +7,11 @@ $(document).ready(function() {
     let python = 0; //5
     let rust = 0; //6
     let swift = 0; //7
-    //is this called the back end?
+
+    //dynamically set variables and element locations
+    let arr = ['q1', 'q2', 'q3', 'q4', 'q5'];
+    let int = 0
+    console.log(arr[int]);
 
     // on submit instructions for intro form
     $("form#intro").submit(function(event) {
@@ -19,28 +23,18 @@ $(document).ready(function() {
 
     });
 
-    //dynamically set variables and element locations
-    let arr = ['apples', 'oranges', 'bananas'];
-    let question = q1
-    let int = 0
+
 
     // question logic
-    $("form#" + "q1").submit(function(event) {
+    $("form#" + arr[int]).submit(function(event) {
         event.preventDefault();
-        while (int <= 2) {
-            console.log("counter is at: " + int);
-            int++;
-            console.log(arr[int]);
-        }
-
-
-
+        console.log("counter is at: " + int);
 
         //project
-        let question = $('input[name="q1"]:checked').val();
+        let question = $('input[name=' + '"' + arr[0] + '"' + ']:checked').val();
         console.log(question + " has been selected"); //debug
 
-        //switch function because if and then statments are kinda lame imo.
+
         switch (question) {
             case 'ruby':
                 ruby = +1 / 5 //this implemements a point system which is what will determine which language is best for the user
@@ -61,9 +55,10 @@ $(document).ready(function() {
             default:
                 alert("Please choose something.")
         }
+        int++
 
         //css manipulation
-        $("form#q1").hide();
-        $("form#q2").show();
+        $("form#" + arr[int - 1]).hide();
+        $("form#" + arr[int]).show();
     });
 });
