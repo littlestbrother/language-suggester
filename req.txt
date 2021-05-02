@@ -1,6 +1,3 @@
-Web page is styled using custom CSS.
-The project is in a presentable, portfolio-quality state.
-
 Project README that includes, bare minimum:
 author name
 program name

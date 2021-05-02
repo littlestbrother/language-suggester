@@ -1,4 +1,9 @@
+/* font */
+
 @import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@700&display=swap');
+
+/* hide forms from user */
+
 #q1 {
     display: none;
 }
@@ -23,14 +28,61 @@
     display: none;
 }
 
+
+/* gradient background */
+
 .background {
     background: rgb(84, 46, 113);
     background: linear-gradient(90deg, rgba(84, 46, 113, 1) 0%, rgba(251, 54, 64, 1) 100%);
 }
+
+
+/* apply font to all fonts on page */
 
 h1,
 h2,
 h3 {
     font-family: 'Rajdhani', sans-serif;
     color: lightgrey;
+}
+
+
+/* top nav bar look */
+
+.topnav {
+    width: 100%;
+    position: fixed;
+    overflow: hidden;
+    left: 0;
+    top: 0;
+    background: hsla(0, 0%, 0%, 0.3);
+    font-family: 'Roboto', sans-serif;
+    color: lightcyan;
+}
+
+
+/* put content in a box with a transparent background for aesthetics */
+
+.wide_content {
+    padding: 1%;
+    margin-top: 7%;
+    left: 0;
+    color: lightcyan;
+    background: hsla(0, 0%, 0%, 0.1);
+    /* margin: 5%; */
+    font-family: 'Roboto', sans-serif;
+    /* box-sizing: border-box; */
+}
+
+
+/* cool kid button */
+
+.button {
+    background: hsla(0, 0%, 0%, 0.1);
+    border: none;
+    color: white;
+    padding: 15px 20px;
+    text-align: center;
+    display: inline-block;
+    font-size: 16px;
 }

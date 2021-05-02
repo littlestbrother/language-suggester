@@ -5,18 +5,22 @@
     <script src="js/jquery-3.5.1.js"></script>
     <script src="js/scripts.js"></script>
     <link href="css/styles.css" rel="stylesheet" type="text/css">
-    <h1>Programming Language Suggestor.</h1>
+
+    <div class="topnav">
+        <h1>&nbsp&nbsp&nbsp&nbspProgramming Language Suggestor.</h1>
+    </div>
+
 </head>
 
 <body class="background">
     <!-- Question 0 (The Intro) -->
-    <form id="intro">
+    <form id="intro" class="wide_content">
         <h2>This is a quiz that will ask you <em>simple</em> questions to recommend the best programming language for you.</h2>
-        <input type="submit" value="Next">
+        <input type="submit" value="Next" class="button">
     </form>
 
     <!-- Question 1 -->
-    <form id="q1">
+    <form id="q1" class="wide_content">
         <h2>Question 1</h2>
         <h3>What is your favorite color?</h3>
         <!-- radio 1 -->
@@ -40,11 +44,13 @@
         <!-- radio 7 -->
         <input type="radio" value="swift" name="q1">
         <label for="7">Pink</label>
-        <button type="submit">Next</button>
+        <br>
+        <br>
+        <button type="submit" class="button">Next</button>
     </form>
 
     <!-- Question 2 -->
-    <form id="q2">
+    <form id="q2" class="wide_content">
         <h2>Question 2</h2>
         <h3>What month is your birthday in?</h3>
         <!-- radio 1 -->
@@ -68,11 +74,13 @@
         <!-- radio 7 -->
         <input type="radio" value="swift" id="7" name="q2">
         <label for="7">I haven't been born yet.</label>
-        <button type="submit">Next</button>
+        <br>
+        <br>
+        <button type="submit" class="button">Next</button>
     </form>
 
     <!-- Question 3 -->
-    <form id="q3">
+    <form id="q3" class="wide_content">
         <h2>Question 3</h2>
         <h3>What is the airspeed velocity of an unladen swallow?</h3>
         <!-- radio 1 -->
@@ -96,11 +104,13 @@
         <!-- radio 7 -->
         <input type="radio" value="swift" id="7" name="q3">
         <label for="7">¯\_(ツ)_/¯</label>
-        <button type="submit">Next</button>
+        <br>
+        <br>
+        <button type="submit" class="button">Next</button>
     </form>
 
     <!-- Question 4 -->
-    <form id="q4">
+    <form id="q4" class="wide_content">
         <h2>Question 4</h2>
         <h3>Solve for γ:</h3>
         <img src="math.png">
@@ -126,11 +136,13 @@
         <!-- radio 7 -->
         <input type="radio" value="swift" id="7" name="q4">
         <label for="7">Yes</label>
-        <button type="submit">Next</button>
+        <br>
+        <br>
+        <button type="submit" class="button">Next</button>
     </form>
 
     <!-- Question 5 -->
-    <form id="q5">
+    <form id="q5" class="wide_content">
         <h2>Question 5</h2>
         <img src="beans.jpg">
         <h3>How many jelly beans in the jar?</h3>
@@ -155,14 +167,18 @@
         <!-- radio 7 -->
         <input type="radio" value="swift" id="7" name="q5">
         <label for="7">0</label>
-        <button type="submit">Next</button>
+        <br>
+        <br>
+        <button type="submit" class="button">Next</button>
     </form>
     <!-- RESULTS -->
-    <form id="q6">
+    <form id="q6" class="wide_content">
         <h2>Your top recommended programming languages:</h2>
         <h3 span="first" id="first"></h3>
         <h3 span="second" id="second"></h3>
         <h3 span="third" id="third"></h3>
+        <br>
+        <button type="submit" class="button">Retake Quiz</button>
     </form>
 
 </body>
