@@ -2,13 +2,13 @@ $(document).ready(function() {
     //Back-end begins here 👇
 
     //Programming language variables:
-    let ruby = 0; //These variables use integers. We'll get to why in a bit.
-    let csharp = 0;
-    let javaScript = 0;
-    let go = 0;
-    let python = 0;
-    let rust = 0;
-    let swift = 0;
+    let ruby = null; //These variables use integers. We'll get to why in a bit.
+    let cSharp = null;
+    let javaScript = null;
+    let go = null;
+    let python = null;
+    let rust = null;
+    let swift = null;
 
     //An array of "q + ineger". This allows us to use the same 
     let arr = ['q1', 'q2', 'q3', 'q4', 'q5', 'q6'];
@@ -55,8 +55,8 @@ $(document).ready(function() {
 
                     break; //This stops the case (current process) to save computation power.
                 case 'csharp':
-                    csharp++
-                    console.log(1 + " is added to: " + question + ", " + question + " is now at: " + csharp); //debug
+                    cSharp++
+                    console.log(1 + " is added to: " + question + ", " + question + " is now at: " + cSharp); //debug
                     break;
                 case 'javaScript':
                     javaScript++
@@ -89,20 +89,19 @@ $(document).ready(function() {
             console.log("current quesiton array: " +
                 arr[int]);
             if (arr[int] == 'q6') {
-                console.log("results being shown");
-                const scores = [ruby, csharp, javaScript, go, python, rust, swift];
-                scores.sort(function(b, a) {
-                    return a - b;
-                });
-                console.log(scores);
-                const getAvg(scores) {
-                    const result = scores.reduce((acc, c) => acc + c, 0);
-                    return result / scores.length
-                }
 
-                $("#first").text("this is first");
-                $("#second").text("this is second");
-                $("#third").text("this is third");
+                let scores = { ruby: ruby, cSharp: cSharp, javaScript: javaScript, go: go, python: python, rust: rust, swift: swift }
+
+                let result = Object.entries(scores).sort(([, a], [, b]) => b - a); //Sort the object scores from greatest to least.
+                //shorten the JavaScript object to three elements.
+                result = result.splice(0, 3);
+
+                //For debugging
+                console.log("results being shown: " + result);
+
+                $("#first").text("1. " + result[0].replace(/[,12345]/g, ""));
+                // $("#second").text("2." +);
+                // $("#third").text("3." +);
             } else {
                 //Parse another pass of the function with the values re-determined.
                 iterateLogic()
