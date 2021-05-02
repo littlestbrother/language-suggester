@@ -40,8 +40,8 @@ $(document).ready(function() {
             let question = $('input[name=' + '"' + arr[int] + '"' + ']:checked').val();
             //If user doesn't select anything, throw error and reload page.
             if (question == undefined) {
-                alert("Please select an option.")
                 location.reload();
+                alert("Please select an option.")
             } else {}
             //So we know if the code did everthing right:
             console.log(question + " has been selected from radio at: " + "form#" + arr[int]); //debug
@@ -86,9 +86,27 @@ $(document).ready(function() {
             $("form#" + arr[int - 1]).hide();
             $("form#" + arr[int]).show();
             //I guess here 👆 is where the front-end stops.
+            console.log("current quesiton array: " +
+                arr[int]);
+            if (arr[int] == 'q6') {
+                console.log("results being shown");
+                const scores = [ruby, csharp, javaScript, go, python, rust, swift];
+                scores.sort(function(b, a) {
+                    return a - b;
+                });
+                console.log(scores);
+                const getAvg(scores) {
+                    const result = scores.reduce((acc, c) => acc + c, 0);
+                    return result / scores.length
+                }
 
-            //Parse another pass of the function with the values re-determined.
-            iterateLogic()
+                $("#first").text("this is first");
+                $("#second").text("this is second");
+                $("#third").text("this is third");
+            } else {
+                //Parse another pass of the function with the values re-determined.
+                iterateLogic()
+            }
 
         });
 
