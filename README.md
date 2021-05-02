@@ -1,39 +1,38 @@
-# _{Application Name}_
+# _Programming Language Suggestor_
 
-#### _{Brief description of application}_
+#### _A Quiz that will help you pick a programming language._
 
-#### By _**{List of contributors}**_
+#### By _**Aaron Kauffman**_
 
 ## Technologies Used
 
-* _List all_
-* _the major technologies_
-* _you used in your project_
-* _here_
+* _JavaScript_
+* _JQuery_
+* _HTML_
+* _CSS_
+* _An Un-Godly amount of Stack-Overflow_
 
 ## Description
 
-_{This is a detailed description of your application. Give as much detail as needed to explain what the application does as well as any other information you want users or other developers to have.}_
+_This application asks for user input to determine what programming language they should learn._
 
 ## Setup/Installation Requirements
 
-* _This is a great place_
-* _to list setup instructions_
-* _in a simple_
-* _easy-to-understand_
-* _format_
-
-_{Leave nothing to chance! You want it to be easy for potential users, employers and collaborators to run your app. Do I need to run a server? How should I set up my databases? Is there other code this application depends on? We recommend deleting the project from your desktop, re-cloning the project from GitHub, and writing down all the steps necessary to get the project working again.}_
+* _"git clone" the url associated with the repository_
+* _open the cloned repo_
+* _open the index.html file_
+* _have fun_
+* _don't let the bugs bite..._
 
 ## Known Bugs
 
-* _Any known issues_
-* _should go here_
+* _Page reloads if you don't answer questions properly._
+* _This was a compromise because I didn't have time to code in what it should do with a bad form submission._
 
 ## License
 
-_{Let people know what to do if they run into any issues or have questions, ideas or concerns.  Encourage them to contact you or make a contribution to the code.}_
+_If you run into any issues: Stop, Drop, and Roll._
 
 ## Contact Information
 
-_{Add your contact information here.}_
+_Contact Aaron at: Aaron.Christian.Kauffman@gmail.com_
