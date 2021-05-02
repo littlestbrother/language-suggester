@@ -2,7 +2,7 @@ $(document).ready(function() {
     //Back-end begins here 👇
 
     //Programming language variables:
-    let ruby = null; //These variables use integers. We'll get to why in a bit.
+    let ruby = null;
     let cSharp = null;
     let javaScript = null;
     let go = null;
@@ -10,15 +10,15 @@ $(document).ready(function() {
     let rust = null;
     let swift = null;
 
-    //An array of "q + ineger". This allows us to use the same 
+    //An array of "q + ineger". This allows us to use the same function over and over again for submitting answers.
     let arr = ['q1', 'q2', 'q3', 'q4', 'q5', 'q6'];
     let int = 0
 
-    // Back-end ends here 👆
+    //Back-end ends here 👆
 
     //Front-end starts here 👇 (kinda...)
 
-    //On intro form submit =>
+    //On intro form submit->
     $("form#intro").submit(function(event) {
         event.preventDefault(); //We're not pulling from a database so we interupt the usual form process. 
         console.log("quiz has started.") //debug
@@ -52,8 +52,7 @@ $(document).ready(function() {
                 case 'ruby': //If the case is the string 'ruby', 'chsharp', etc... it will-
                     ruby++ //run the code beneath it... In this case it adds 1 to the variables we listed on line 5 through 11.
                     console.log(1 + " is added to: " + question + ", " + question + " is now at: " + ruby); //More debugging code.
-
-                    break; //This stops the case (current process) to save computation power.
+                    break; //This stops the current process to save computation power.
                 case 'csharp':
                     cSharp++
                     console.log(1 + " is added to: " + question + ", " + question + " is now at: " + cSharp); //debug
@@ -80,28 +79,37 @@ $(document).ready(function() {
                     break;
             }
             //If all goes well then the user will progress.
-            //The line below adds 1 to the varbiable integer. This will then tell the code what string to pull for the array in the next pass of the code.
+            //The line below adds 1 to the varbiable integer. This will then tell the code what element to pull from the array in the next pass of the function.
             int++
+
             //CSS manipulation
             $("form#" + arr[int - 1]).hide();
             $("form#" + arr[int]).show();
-            //I guess here 👆 is where the front-end stops.
+
             console.log("current quesiton array: " +
                 arr[int]);
+            //If the current element from the question array is q6, Show the user their results.
             if (arr[int] == 'q6') {
 
-                let scores = { ruby: ruby, cSharp: cSharp, javaScript: javaScript, go: go, python: python, rust: rust, swift: swift }
+                let scores = { 'Ruby': ruby, 'C#': cSharp, 'JavaScript': javaScript, 'Go': go, 'Python': python, 'Rust': rust, 'Swift': swift }
 
-                let result = Object.entries(scores).sort(([, a], [, b]) => b - a); //Sort the object scores from greatest to least.
-                //shorten the JavaScript object to three elements.
+                //Sort the object scores from greatest to least.
+                let result = Object.entries(scores).sort(([, a], [, b]) => b - a);
+                //Shorten the JavaScript object to three elements.
                 result = result.splice(0, 3);
 
                 //For debugging
                 console.log("results being shown: " + result);
+                //Convert obj element to string then perform regex to remove any numbers or commas.
+                let first = String(result[0]).replace(/[12345,]/g, '');
+                let second = String(result[1]).replace(/[12345,]/g, '');
+                let third = String(result[2]).replace(/[12345,]/g, '');
 
-                $("#first").text("1. " + result[0].replace(/[,12345]/g, ""));
-                // $("#second").text("2." +);
-                // $("#third").text("3." +);
+                //Display the new polished strings.
+                $("#first").text("1. " + first);
+                $("#second").text("2. " + second);
+                $("#third").text("3. " + third);
+                //Here 👆 is where the front-end stops.
             } else {
                 //Parse another pass of the function with the values re-determined.
                 iterateLogic()
