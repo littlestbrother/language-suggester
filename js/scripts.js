@@ -38,7 +38,6 @@ $(document).ready(function() {
             event.preventDefault();
             //Pull the user input from whatever string "q + integer"  is using in the array "arr".
             let question = $('input[name=' + '"' + arr[int] + '"' + ']:checked').val();
-            //If user doesn't select anything, throw error and reload page.
 
             //So we know if the code did everthing right:
             console.log(question + " has been selected from radio at: " + "form#" + arr[int]); //debug
@@ -58,6 +57,7 @@ $(document).ready(function() {
                     javaScript++
                     console.log(1 + " is added to: " + question + ", " + question + " is now at: " + javaScript); //debug
                     break;
+                case 'python':
                     python++
                     console.log(1 + " is added to: " + question + ", " + question + " is now at: " + python); //debug
                     break;
@@ -111,11 +111,6 @@ $(document).ready(function() {
                         event.preventDefault();
                         //Pull the user input from whatever string "q + integer"  is using in the array "arr".
                         let question = $('input[name=' + '"' + arr[int] + '"' + ']:checked').val();
-                        //If user doesn't select anything, throw error and reload page.
-                        if (question == undefined) {
-                            location.reload();
-                            alert("Please select an option.")
-                        } else {}
                         //So we know if the code did everthing right:
                         console.log(question + " has been selected from radio at: " + "form#" + arr[int]); //debug
 
