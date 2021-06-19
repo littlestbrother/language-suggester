@@ -1,27 +1,33 @@
-let ruby = null;
-let cSharp = null;
-let javaScript = null;
-let go = null;
-let python = null;
-let rust = null;
-let swift = null;
-let arr = ['q1', 'q2', 'q3', 'q4', 'q5', 'q6'];
-let int = 0;
-
 $(document).ready(function () {
-    $("form#intro").submit(function (event) {
+    let ruby = null; //start backend, define necessary variables 👇
+    let cSharp = null;
+    let javaScript = null;
+    let go = null;
+    let python = null;
+    let rust = null;
+    let swift = null;
+    let arr = ['q1', 'q2', 'q3', 'q4', 'q5', 'q6'];
+    let int = 0; //end backend 👆
+
+    $("form#intro").submit(function (event) { //start frontend 👇
         event.preventDefault();
         console.log("quiz has started.")
-        $("form#intro").hide();
-        $("form#q1").show();
+        $("form#intro").hide(); //hide intro form
+        $("form#q1").show(); //show first question
     });
 
-    function iterateLogic() {
+    function iterateLogic() { //create function serveForm, this will serve user new appropriate form
         $("form#" + arr[int]).submit(function (event) {
             event.preventDefault();
             let question = $('input[name=' + '"' + arr[int] + '"' + ']:checked').val(); //convert user input from html to js string
-            console.log(question + " has been selected from radio at: " + "form#" + arr[int]);
+            console.log(question + " has been selected from radio at: " + "form#" + arr[int]); //debug
+            
+            int++
+            $("form#" + arr[int - 1]).hide();
+            $("form#" + arr[int]).show();
 
+            countScore()
+            function countScore(){ //create countScore, this will keep track of which language is the most popular.
             switch (question) {
                 case 'ruby':
                     ruby++
@@ -47,15 +53,15 @@ $(document).ready(function () {
                     swift++
                     console.log(1 + " is added to: " + question + ", " + question + " is now at: " + swift);
                     break;
+                case 'go':
+                    go++
+                    console.log(1 + " is added to: " + question + ", " + question + " is now at: " + go);
+                    break;
                 default:
                     alert("you somehow broke it.")
                     location.reload();
-            }
+            }}
 
-                int++
-                $("form#" + arr[int - 1]).hide();
-                $("form#" + arr[int]).show();
-            
             console.log("current quesiton: " +
                 arr[int]);
 
