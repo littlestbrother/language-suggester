@@ -22,8 +22,11 @@
     <div class="container">
         <!-- Question 0 (The Intro) -->
         <form id="intro">
-            <h1 class="display-1"><em>//Language Suggestor</em></h1>
+            <h1 class="display-1">Language Suggestor</h1>
             <h3>This is a quiz that will ask you <em>simple</em> questions to recommend the best programming language.</h3>
+            <br>
+            <h4>First off, what's your name?</h4>
+            <input type="text" class="form-control" placeholder="Zark Muckerburg" id="name">
             <br>
             <button type="submit" class="btn btn-outline-danger btn-lg">Next</button>
         </form>
@@ -183,7 +186,7 @@
         </form>
         <!-- RESULTS -->
         <form id="q6">
-            <h2>Your top recommended programming languages:</h2>
+            <h2 id="bye">Hello! Your top recommended programming languages are:</h2>
             <h3 span="first" id="first"></h3>
             <h3 span="second" id="second"></h3>
             <h3 span="third" id="third"></h3>

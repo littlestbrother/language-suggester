@@ -29,7 +29,7 @@ _This application asks for user input to determine what programming language the
 
 ## License
 
-
+[MIT](https://choosealicense.com/licenses/mit/)
 
 ## Contact Information
 

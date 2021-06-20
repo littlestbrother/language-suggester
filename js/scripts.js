@@ -6,15 +6,18 @@ $(document).ready(function () {
     let python = null;
     let rust = null;
     let swift = null;
+    let name = null;
     let arr = ['q1', 'q2', 'q3', 'q4', 'q5', 'q6'];
     let int = 0; //end backend 👆
 
-    serverForm();//run the serve form function to get the question progression working
+    serverForm();//run serveForm function to get the question progression ready for form q1
     $("form#intro").submit(function (event) { //start frontend 👇
         event.preventDefault();
         console.log("quiz has started.")
         $("form#intro").hide(); //hide intro form
         $("form#q1").fadeIn(); //show first question
+        name = $("input#name").val();
+        console.log("user's name is: " + name)
     });
 
     function serverForm() { //create function serveForm, this will serve user new appropriate form
@@ -79,6 +82,7 @@ $(document).ready(function () {
                 let first = String(result[0]).replace(/[12345,]/g, ''); //convert element in object to string and use regex to remove any characters 1-5 or commas
                 let second = String(result[1]).replace(/[12345,]/g, '');
                 let third = String(result[2]).replace(/[12345,]/g, '');
+                $("#bye").text("Hello " + name + "!" + " Your top programming languages are:")//greet user with their name
                 $("#first").text("1. " + first); //show first second and third place
                 $("#second").text("2. " + second);
                 $("#third").text("3. " + third); //frontends ends here 👆
