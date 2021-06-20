@@ -23,3 +23,24 @@
 #q6 {
     display: none;
 }
+
+h1,h2,h3,p,label{
+    color: #E1E5EA;
+}
+
+.container{
+    padding: 5%;
+    background: linear-gradient(90deg, rgba(34,40,49,1) 0%, rgba(48,71,94,1) 100%);
+    margin-top: 10%;
+    border-radius: 10px;
+}
+
+body{
+    /* background-color: #DDDDDD; */
+    background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(221,221,221,1) 100%);
+}
+
+.btn-outline{
+    color: #222831;
+    background-color: #F05454;
+}
