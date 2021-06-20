@@ -9,6 +9,7 @@ $(document).ready(function () {
     let arr = ['q1', 'q2', 'q3', 'q4', 'q5', 'q6'];
     let int = 0; //end backend 👆
 
+    serverForm();//run the serve form function to get the question progression working
     $("form#intro").submit(function (event) { //start frontend 👇
         event.preventDefault();
         console.log("quiz has started.")
@@ -16,7 +17,7 @@ $(document).ready(function () {
         $("form#q1").show(); //show first question
     });
 
-    function iterateLogic() { //create function serveForm, this will serve user new appropriate form
+    function serverForm() { //create function serveForm, this will serve user new appropriate form
         $("form#" + arr[int]).submit(function (event) {
             event.preventDefault();
             let question = $('input[name=' + '"' + arr[int] + '"' + ']:checked').val(); //convert user input from html to js string
@@ -30,7 +31,7 @@ $(document).ready(function () {
             if (arr[int] == 'q6') {//if the the array position has reached question 6 starts the tally process
                 finalTally()
             } else { //if not keep serving forms
-                iterateLogic()
+                serverForm()
             }
 
             countScore()
@@ -80,9 +81,9 @@ $(document).ready(function () {
                 let third = String(result[2]).replace(/[12345,]/g, '');
                 $("#first").text("1. " + first); //show first second and third place
                 $("#second").text("2. " + second);
-                $("#third").text("3. " + third);
+                $("#third").text("3. " + third); //frontends ends here 👆
             }
         });
     }
-    iterateLogic();
+
 });
