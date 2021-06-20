@@ -14,7 +14,7 @@ $(document).ready(function () {
         event.preventDefault();
         console.log("quiz has started.")
         $("form#intro").hide(); //hide intro form
-        $("form#q1").show(); //show first question
+        $("form#q1").fadeIn(); //show first question
     });
 
     function serverForm() { //create function serveForm, this will serve user new appropriate form
@@ -26,7 +26,7 @@ $(document).ready(function () {
 
             int++ //add 1 to int, so the next form can be served
             $("form#" + arr[int - 1]).hide(); //hide the current question
-            $("form#" + arr[int]).show(); //show next question
+            $("form#" + arr[int]).fadeIn(); //show next question
 
             if (arr[int] == 'q6') {//if the the array position has reached question 6 starts the tally process
                 finalTally()

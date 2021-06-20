@@ -19,20 +19,18 @@ _This application asks for user input to determine what programming language the
 ## Setup/Installation Requirements
 
 * _"git clone" the url associated with the repository_
-* _open the cloned repo_
-* _open the index.html file_
-* _have fun_
-* _don't let the bugs bite..._
+* _open the cloned repo zip file_
+* _open (or double click) the index.html file_
+* _have fun!_
 
 ## Known Bugs
 
-* _Page reloads if you don't answer questions properly._
-* _This was a compromise because I didn't have time to code in what it should do with a bad form submission._
+* _If the user edits the elements in dev tools and submits 'undefined' the page will detect an error and reload._
 
 ## License
 
-_If you run into any issues: Stop, Drop, and Roll._
+
 
 ## Contact Information
 
-_Contact Aaron at: Aaron.Christian.Kauffman@gmail.com_
+_If you run into any issues, remember: Stop, Drop, and Roll. Or, Contact Aaron at: Aaron.Christian.Kauffman@gmail.com_

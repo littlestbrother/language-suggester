@@ -24,9 +24,14 @@
     display: none;
 }
 
+/* whole font page color */
+
 h1,h2,h3,p,label{
     color: #E1E5EA;
 }
+
+/* page elements */
+/* https://colorhunt.co/palette/dddddd22283130475ef05454 color palette  */
 
 .container{
     padding: 5%;
@@ -43,4 +48,8 @@ body{
 .btn-outline{
     color: #222831;
     background-color: #F05454;
+}
+
+img{
+    border-radius: 10px;
 }
